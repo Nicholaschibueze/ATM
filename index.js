@@ -14,7 +14,7 @@ function atmMachineUsername() {
 }
 // Input a valid password
 function atmMachinePassword() {
-    var pswEntry = parseInt(prompt("Dear " + username + ", enter your 4 digit PIN"));
+    var pswEntry = parseInt(prompt("Dear " + username + ", Enter your 4 digit PIN"));
     checkPassword(pswEntry);
 }
 // Verify Password meets requirements
@@ -49,7 +49,7 @@ function selectAccountType() {
 }
 // Select what the user wishes to do
 function selectFunction() {
-    var atmFunctions = parseInt(prompt("Hello " + username + ", what can we do for you today? \n 1. Inquiry \n 2. Withdrawal \n 3. Deposit \n 4. Exit"));
+    var atmFunctions = parseInt(prompt("Hello " + username + ", what can Nicholas do for you today? \n 1. Inquiry \n 2. Withdrawal \n 3. Deposit \n 4. Exit"));
     if (atmFunctions !== "" && atmFunctions !== null && !isNaN(atmFunctions)) {
         switch (atmFunctions) {
             case 1:
@@ -129,7 +129,7 @@ function toContinue() {
 }
 // Exit the ATM
 function exit() {
-    alert("Thank you for patronising our ATM machine");
+    alert("Thank you for patronising Dev Nicholas ATM Machine");
     // To simulate a real ATM, get ready for next user
     // atmMachineUsername();
 }
