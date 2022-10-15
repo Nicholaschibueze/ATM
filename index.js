@@ -1,9 +1,17 @@
+/**
+ * 
+ */
 var username,
     correct_pass = (/^[0-9]{4}$/),
     passTry = 3,
     currentBalance = 35000000;
 
-// Input a username
+
+
+
+/**
+ * Input a username
+ */
 function atmMachineUsername() {
     username = prompt("Enter your name");
     if (username !== "" && username !== null) {
@@ -12,11 +20,19 @@ function atmMachineUsername() {
         atmMachineUsername();
     }
 }
-// Input a valid password
+
+/**
+ *   Input a valid password
+ */
 function atmMachinePassword() {
     var pswEntry = parseInt(prompt("Dear " + username + ", Enter your 4 digit PIN"));
     checkPassword(pswEntry);
 }
+
+/**
+ * 
+ * @param {checkPassword} userInput 
+ */
 // Verify Password meets requirements
 function checkPassword(userInput) {
     if (correct_pass.test(userInput)) {
@@ -37,6 +53,10 @@ function checkPassword(userInput) {
         }
     }
 }
+
+/**
+ * section of account type 
+ */
 // Select Which account type to use
 function selectAccountType() {
     var accountType = parseInt(prompt("Which type of account do you have? \n 1. Savings \n 2. Current \n 3. Credit"));
@@ -47,7 +67,10 @@ function selectAccountType() {
         selectAccountType();
     }
 }
-// Select what the user wishes to do
+
+/**
+ *  Select what the user wishes to do
+ */
 function selectFunction() {
     var atmFunctions = parseInt(prompt("Hello " + username + ", what can Nicholas do for you today? \n 1. Inquiry \n 2. Withdrawal \n 3. Deposit \n 4. Exit"));
     if (atmFunctions !== "" && atmFunctions !== null && !isNaN(atmFunctions)) {
@@ -73,12 +96,22 @@ function selectFunction() {
         selectFunction();
     }
 }
-// Inquiry
+
+/**
+ *  Inquiry
+ */
+
 function inquiry() {
     alert("Your current balance is $" + currentBalance);
     toContinue();
 }
-// Deposit
+
+
+
+
+/**
+ *   Deposit
+ */
 function deposit() {
     var depositAmount = parseInt(prompt("How much do you want to deposit?"));
     if (depositAmount !== "" && depositAmount !== null && !isNaN(depositAmount)) {
@@ -90,7 +123,13 @@ function deposit() {
         deposit();
     }
 }
-// Withdrawal
+
+
+
+
+/**
+ * Withdrawal
+ */
 function withdrawal() {
     var withdrawalAmount = parseInt(prompt("How much do you want to withdraw? \n" + "The minimum amount you can withdraw is $2000"));
     if (withdrawalAmount !== "" && withdrawalAmount !== null && !isNaN(withdrawalAmount)) {
@@ -113,7 +152,11 @@ function withdrawal() {
         withdrawal();
     }
 }
-// Does the user wish to continue using the ATM
+
+/**
+ * Does the user wish to continue using the ATM
+ */
+
 function toContinue() {
     var yesOrNo = parseInt(prompt("Do you want to perform another transaction? \n 1. Yes \n 2. No"));
     if (yesOrNo !== "" && yesOrNo !== null) {
@@ -127,7 +170,11 @@ function toContinue() {
         toContinue();
     }
 }
-// Exit the ATM
+
+/**
+ *  Exist ATM
+ */
+
 function exit() {
     alert("Thank you for patronising Dev Nicholas ATM Machine");
     // To simulate a real ATM, get ready for next user
